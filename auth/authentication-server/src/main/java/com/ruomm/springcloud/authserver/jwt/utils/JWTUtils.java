@@ -9,6 +9,7 @@ import com.ruomm.javax.corex.StringUtils;
 import com.ruomm.springcloud.authserver.config.AppConfig;
 import com.ruomm.springcloud.authserver.jwt.claim.UserClaim;
 import com.ruomm.springcloud.exception.WebAppException;
+import com.ruomm.springcloud.utils.AppUtils;
 
 import java.util.Date;
 
