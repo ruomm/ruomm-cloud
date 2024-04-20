@@ -2,8 +2,11 @@ package com.ruomm.springcloud.authserver.service;
 
 import com.ruomm.javax.corex.ListUtils;
 import com.ruomm.springcloud.authserver.config.AppConfig;
+import com.ruomm.springcloud.authserver.config.ConfigProperties;
 import com.ruomm.springcloud.authserver.dao.UserMapper;
 import com.ruomm.springcloud.authserver.entry.UserEntity;
+import com.ruomm.springcloud.authserver.jwt.claim.UserClaim;
+import com.ruomm.springcloud.authserver.jwt.utils.JWTUtils;
 import com.ruomm.springcloud.authserver.utils.AppUtils;
 import com.ruomm.springcloud.authserver.utils.WebUtils;
 import com.ruomm.springcloud.exception.WebAppException;
@@ -29,6 +32,8 @@ import java.util.List;
 public class UserManagerService {
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    ConfigProperties configProperties;
 
     public CommonResponse<UserCreateResp> createUser(UserCreateReq req) {
         //判断用户名称是否重复
@@ -75,7 +80,7 @@ public class UserManagerService {
             throw new WebAppException(AppUtils.ERROR_CORE, String.format("登录失败,用户状态：%s",  WebUtils.parseUserStatus(resultUser.getStatus())));
         }
         String password_slat = resultUser.getPasswordSlat();
-        String password = WebUtils.passwordByClear(req.getPassword(), password_slat);
+        String password = WebUtils.passwordByFE(req.getPassword(), password_slat);
         if (!password.equals(resultUser.getPassword())){
             throw new WebAppException(AppUtils.ERROR_CORE, "登录失败，密码错误");
         }
@@ -84,6 +89,11 @@ public class UserManagerService {
         resp.setUserName(resultUser.getUserName());
         resp.setNickName(resultUser.getNickName());
         resp.setBindPhone(resultUser.getBindPhone());
+        UserClaim userClaim = new UserClaim();
+        userClaim.setUserId(resultUser.getId());
+        userClaim.setUserName(resultUser.getUserName());
+        String token=JWTUtils.getToken(userClaim,configProperties.getUserTokenExpireMins()*1000);
+        resp.setToken(token);
         return AppUtils.toAckT(resp);
     }
 

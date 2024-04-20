@@ -39,5 +39,14 @@
             <artifactId>java-jwt</artifactId>
             <version>4.4.0</version>
         </dependency>
+        <!-- shiro权限认证 -->
+        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring-boot-starter -->
+<!--        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring-boot-starter</artifactId>
+            <version>1.13.0</version>
+            <classifier>jakarta</classifier>
+        </dependency>-->
+
     </dependencies>
 </project>

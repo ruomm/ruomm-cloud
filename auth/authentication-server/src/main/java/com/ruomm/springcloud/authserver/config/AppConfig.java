@@ -10,5 +10,5 @@ import com.ruomm.javax.basex.TokenHelper;
  */
 public class AppConfig {
     public final static TokenHelper TOKEN_HELPER = new TokenHelper(TokenHelper.TOKEN_NUMBER + TokenHelper.TOKEN_LETTER_LOWER_CASE, 16);
-
+    public final static String JWT_SECRET = "cqCjzDC0Pvny5EtzN7eoKuGDJvtx";
 }

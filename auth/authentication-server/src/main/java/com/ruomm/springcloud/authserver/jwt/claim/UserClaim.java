@@ -14,5 +14,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class UserClaim {
-    private String userId;
+    private Long userId;
+    private String userName;
 }
