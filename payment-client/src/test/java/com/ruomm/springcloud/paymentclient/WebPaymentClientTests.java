@@ -1,10 +1,10 @@
-package com.ruomm.springcloud.paymentserver;
+package com.ruomm.springcloud.paymentclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WebApplicationTests {
+class WebPaymentClientTests {
 
     @Test
     void contextLoads() {

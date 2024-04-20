@@ -10,10 +10,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 //@EnableJpaRepositories
 @EnableScheduling
 @MapperScan(basePackages = {"com.ruomm.springcloud.authserver.dao"})
-public class WebApplication {
+public class WebAuthServer {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
+        SpringApplication.run(WebAuthServer.class, args);
     }
 
 }

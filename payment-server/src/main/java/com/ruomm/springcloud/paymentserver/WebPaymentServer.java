@@ -10,10 +10,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 //@EnableJpaRepositories
 @EnableScheduling
 @MapperScan(basePackages = {"com.ruomm.springcloud.paymentserver.dao"})
-public class WebApplication {
+public class WebPaymentServer {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
+        SpringApplication.run(WebPaymentServer.class, args);
     }
 
 }
