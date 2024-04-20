@@ -10,6 +10,7 @@
 	<version>1.0.0</version>
 	<modules>
 		<module>auth</module>
+		<module>payment-client</module>
 		<module>payment-server</module>
 		<module>cloud-api-commons</module>
 	</modules>

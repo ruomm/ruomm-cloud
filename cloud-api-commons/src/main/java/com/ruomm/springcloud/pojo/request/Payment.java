@@ -13,7 +13,6 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
 public class Payment {
     /**
      * remark: 主键ID
