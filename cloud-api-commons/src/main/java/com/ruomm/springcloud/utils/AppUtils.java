@@ -1,4 +1,4 @@
-package com.ruomm.springcloud.authserver.utils;
+package com.ruomm.springcloud.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

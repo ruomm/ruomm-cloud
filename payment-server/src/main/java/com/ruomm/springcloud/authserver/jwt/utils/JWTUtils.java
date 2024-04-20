@@ -8,6 +8,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.ruomm.javax.corex.StringUtils;
 import com.ruomm.springcloud.authserver.config.AppConfig;
 import com.ruomm.springcloud.authserver.jwt.claim.UserClaim;
+import com.ruomm.springcloud.authserver.utils.AppUtils;
 import com.ruomm.springcloud.exception.WebAppException;
 
 import java.util.Date;

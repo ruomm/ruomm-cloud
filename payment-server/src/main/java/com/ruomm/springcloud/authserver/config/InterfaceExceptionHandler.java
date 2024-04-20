@@ -2,7 +2,7 @@ package com.ruomm.springcloud.authserver.config;
 
 import com.ruomm.javax.corex.ListUtils;
 import com.ruomm.javax.corex.StringUtils;
-import com.ruomm.javax.jsonx.XJSON;
+import com.ruomm.springcloud.authserver.utils.AppUtils;
 import com.ruomm.springcloud.exception.WebAppException;
 import com.ruomm.springcloud.pojo.CommonFieldError;
 import com.ruomm.springcloud.pojo.CommonResponse;
@@ -27,12 +27,13 @@ import java.util.List;
 public class InterfaceExceptionHandler {
     @ResponseBody
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public String commmonArgumentNotValidExceptionHandler(MethodArgumentNotValidException e) {
+    public CommonResponse commmonArgumentNotValidExceptionHandler(MethodArgumentNotValidException e) {
         List<FieldError> listFieldErrors = e.getFieldErrors();
         CommonResponse commonResponse= AppUtils.toNack(AppUtils.ERROR_PARAM,"请求参数错误");
         log.error("MethodArgumentNotValidException Handler,错误码:" + AppUtils.ERROR_PARAM + ",错误信息:" + "请求参数错误", e);
         if (ListUtils.isEmpty(listFieldErrors)){
-            return XJSON.toJSONString(commonResponse);
+//            return XJSON.toJSONString(commonResponse);
+            return commonResponse;
         } else {
             List<CommonFieldError> listCommonFieldErrors = new ArrayList<>();
             listFieldErrors.forEach(fieldError -> {
@@ -43,12 +44,13 @@ public class InterfaceExceptionHandler {
                 log.error("MethodArgumentNotValidException Handler，field name:"+commonFieldError.getField()+",message:"+commonFieldError.getMessage());
             });
             commonResponse.setErrors(listCommonFieldErrors);
-            return XJSON.toJSONString(commonResponse);
+//            return XJSON.toJSONString(commonResponse);
+            return commonResponse;
         }
     }
     @ResponseBody
     @ExceptionHandler(WebAppException.class)
-    public String commmonWebAppExceptionHandler(WebAppException e) {
+    public CommonResponse commmonWebAppExceptionHandler(WebAppException e) {
         int code = e.getCode();
         String message = StringUtils.isEmpty(e.getMessage()) ? "业务处理错误" : e.getMessage();
         if (null == e.getCause()) {
@@ -57,26 +59,29 @@ public class InterfaceExceptionHandler {
             log.error("WebAppException Handler,错误码:" + code  + ",错误信息:" + message, e.getCause());
         }
         CommonResponse commonResponse = AppUtils.toNack(code,message);
-        return XJSON.toJSONString(commonResponse);
+//        return XJSON.toJSONString(commonResponse);
+        return commonResponse;
     }
 
     @ResponseBody
     @ExceptionHandler(RuntimeException.class)
-    public String commmonRuntimeExceptionHandler(RuntimeException e) {
+    public CommonResponse commmonRuntimeExceptionHandler(RuntimeException e) {
         int code = AppUtils.ERROR_EXCEPT;
         String message = "业务处理异常";
         log.error("RuntimeException Handler,错误码:" + code + ",错误信息:" + message, e);
         CommonResponse commonResponse = AppUtils.toNack(code,message);
-        return XJSON.toJSONString(commonResponse);
+//        return XJSON.toJSONString(commonResponse);
+        return commonResponse;
     }
 
     @ResponseBody
     @ExceptionHandler(Exception.class)
-    public String commmonExceptionHandler(Exception e) {
+    public CommonResponse commmonExceptionHandler(Exception e) {
         int code = AppUtils.ERROR_SYSTEM;
         String message = "系统运行错误";
         log.error("Exception Handler,错误码:" + code + ",错误信息:" + message, e);
         CommonResponse commonResponse = AppUtils.toNack(code,message);
-        return XJSON.toJSONString(commonResponse);
+//        return XJSON.toJSONString(commonResponse);
+        return commonResponse;
     }
 }

@@ -8,6 +8,7 @@ package com.ruomm.springcloud.authserver.shiro.filter;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.ruomm.javax.jsonx.XJSON;
 import com.ruomm.springcloud.authserver.jwt.utils.JWTUtils;
+import com.ruomm.springcloud.authserver.utils.AppUtils;
 import com.ruomm.springcloud.pojo.CommonResponse;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;

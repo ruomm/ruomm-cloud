@@ -22,4 +22,17 @@ public class CommonResponse<T>{
     private String message;
     private List<CommonFieldError> errors;
     private T data;
+    public CommonResponse(int code) {
+        this.code = code;
+        this.message = message;
+    }
+    public CommonResponse(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+    public CommonResponse(int code, String message, T data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+    }
 }

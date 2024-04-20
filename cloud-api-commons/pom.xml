@@ -40,6 +40,24 @@
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
         </dependency>
+
+        <!-- 牛牛通用Jar包开始 -->
+        <dependency>
+            <groupId>com.ruomm.javax</groupId>
+            <artifactId>javax_basex</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ruomm.javax</groupId>
+            <artifactId>javax_objvalidatorx</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${com.alibaba.fastjson.version}</version>
+        </dependency>
     </dependencies>
+
 
 </project>
