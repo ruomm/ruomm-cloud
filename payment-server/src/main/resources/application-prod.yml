@@ -1,6 +1,6 @@
 #指定端口和路径
 server:
-  port: 8099
+  port: 8001
 #spring配置
 spring:
   datasource:
