@@ -40,3 +40,12 @@ eureka:
     service-url:
       #单机配置
       defaultZone: http://localhost:7001/eureka
+management:  #actuator
+  server:
+    port: 8001
+  endpoints:
+    web:
+      #      base-path: / #默认是/actuator 前缀，可以在这里修改
+      exposure:
+        include: "*"  #打开全部请求端点
+#        include: refresh,health,info #打开部分

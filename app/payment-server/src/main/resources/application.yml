@@ -1,10 +1,12 @@
 #指定端口和路径
 server:
   port: 8001
-  servlet:
-    context-path: /api
+#  servlet:
+#    context-path: /api
 #spring配置
 spring:
+  application:
+    name: payment-server
   profiles:
     active: @profiles.active@
   datasource:

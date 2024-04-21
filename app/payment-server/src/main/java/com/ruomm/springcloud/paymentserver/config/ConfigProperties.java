@@ -19,8 +19,8 @@ public class ConfigProperties {
     private String profilesActive;
     @Value(value = "${server.port}")
     private int serverPort;
-    @Value(value = "${server.servlet.context-path}")
-    private String serverContextPath;
+/*    @Value(value = "${server.servlet.context-path}")
+    private String serverContextPath;*/
     /**
      * 日志输出路径
      */
