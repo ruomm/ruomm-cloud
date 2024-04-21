@@ -27,11 +27,21 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
-       <!-- <dependency>
+       <dependency>
             <groupId>com.ruomm.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
-        </dependency>-->
+           <exclusions>
+               <exclusion>
+                   <groupId>org.hibernate.validator</groupId>
+                   <artifactId>hibernate-validator</artifactId>
+               </exclusion>
+               <exclusion>
+                   <groupId>com.alibaba</groupId>
+                   <artifactId>fastjson</artifactId>
+               </exclusion>
+           </exclusions>
+        </dependency>
         <!--boot web actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

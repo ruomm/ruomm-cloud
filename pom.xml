@@ -20,7 +20,8 @@
 		<maven.compiler.target>17</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<ruommjavax.version>3.0.2</ruommjavax.version>
-		<com.alibaba.fastjson.version>2.0.10</com.alibaba.fastjson.version>
+<!--		<com.alibaba.fastjson.version>2.0.10</com.alibaba.fastjson.version>-->
+		<com.alibaba.fastjson.version>2.0.49</com.alibaba.fastjson.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>

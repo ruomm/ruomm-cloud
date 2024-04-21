@@ -6,10 +6,10 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.ruomm.javax.corex.StringUtils;
-import com.ruomm.springcloud.paymentclient.config.AppConfig;
-import com.ruomm.springcloud.paymentclient.utils.AppUtils;
-import com.ruomm.springcloud.paymentclient.jwt.claim.UserClaim;
 import com.ruomm.springcloud.exception.WebAppException;
+import com.ruomm.springcloud.paymentclient.config.AppConfig;
+import com.ruomm.springcloud.paymentclient.jwt.claim.UserClaim;
+import com.ruomm.springcloud.utils.AppUtils;
 
 import java.util.Date;
 

@@ -1,9 +1,9 @@
 package com.ruomm.springcloud.paymentserver.controller;
 
 import com.ruomm.springcloud.paymentserver.service.PaymentService;
-import com.ruomm.springcloud.paymentserver.utils.AppUtils;
 import com.ruomm.springcloud.pojo.CommonResponse;
 import com.ruomm.springcloud.pojo.request.Payment;
+import com.ruomm.springcloud.utils.AppUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

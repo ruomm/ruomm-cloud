@@ -2,10 +2,10 @@ package com.ruomm.springcloud.paymentserver.config;
 
 import com.ruomm.javax.corex.ListUtils;
 import com.ruomm.javax.corex.StringUtils;
-import com.ruomm.springcloud.paymentserver.utils.AppUtils;
 import com.ruomm.springcloud.exception.WebAppException;
 import com.ruomm.springcloud.pojo.CommonFieldError;
 import com.ruomm.springcloud.pojo.CommonResponse;
+import com.ruomm.springcloud.utils.AppUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

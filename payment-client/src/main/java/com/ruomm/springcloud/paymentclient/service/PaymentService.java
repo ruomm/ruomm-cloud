@@ -1,12 +1,12 @@
 package com.ruomm.springcloud.paymentclient.service;
 
+import com.ruomm.springcloud.exception.WebAppException;
 import com.ruomm.springcloud.paymentclient.config.ConfigProperties;
 import com.ruomm.springcloud.paymentclient.dao.PaymentMapper;
 import com.ruomm.springcloud.paymentclient.entry.PaymentEntity;
-import com.ruomm.springcloud.paymentclient.utils.AppUtils;
-import com.ruomm.springcloud.exception.WebAppException;
 import com.ruomm.springcloud.pojo.CommonResponse;
 import com.ruomm.springcloud.pojo.request.Payment;
+import com.ruomm.springcloud.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;

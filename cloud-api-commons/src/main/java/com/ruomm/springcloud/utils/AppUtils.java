@@ -1,7 +1,5 @@
 package com.ruomm.springcloud.utils;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.ruomm.javax.corex.StringUtils;
 import com.ruomm.javax.objvalidatorx.ObjValidResult;
 import com.ruomm.javax.objvalidatorx.ObjValidUtil;
@@ -67,18 +65,27 @@ public class AppUtils {
 
     public final static String[] JOB_SERVER_NONE_SERIALIZE_KEYS = new String[]{"recordStartTime", "recordEndTime", "recordActionDelay"};
 
-    public static JSONObject toAckJson(Object respnseObj, String... noneSerializeKeys) {
-        JSONObject jsonObject = JSON.parseObject(JSON.toJSONString(respnseObj));
-        if (null != noneSerializeKeys && noneSerializeKeys.length > 0) {
-            for (String key : noneSerializeKeys) {
-                if (!StringUtils.isEmpty(key)) {
-                    jsonObject.remove(key);
-                }
-            }
+//    public static JSONObject toAckJson(Object respnseObj, String... noneSerializeKeys) {
+//        JSONObject jsonObject = JSON.parseObject(JSON.toJSONString(respnseObj));
+//        if (null != noneSerializeKeys && noneSerializeKeys.length > 0) {
+//            for (String key : noneSerializeKeys) {
+//                if (!StringUtils.isEmpty(key)) {
+//                    jsonObject.remove(key);
+//                }
+//            }
+//        }
+//        jsonObject.put("code", CODE_OK);
+//        jsonObject.put("message", CODE_MAP.get(CODE_OK));
+//        return jsonObject;
+//    }
+    public static boolean success(CommonResponse commonResponse){
+        if (null == commonResponse){
+            return false;
+        } else if (commonResponse.getCode() == CODE_OK) {
+            return true;
+        } else {
+            return false;
         }
-        jsonObject.put("code", CODE_OK);
-        jsonObject.put("message", CODE_MAP.get(CODE_OK));
-        return jsonObject;
     }
     public static CommonResponse toAck() {
         return toCommonResponse(CODE_OK,null);
