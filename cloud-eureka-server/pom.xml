@@ -21,7 +21,7 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
-        <!--eureka-server-->
+        <!-- eureka服务端的依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
@@ -31,16 +31,6 @@
             <groupId>com.ruomm.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
-           <exclusions>
-               <exclusion>
-                   <groupId>org.hibernate.validator</groupId>
-                   <artifactId>hibernate-validator</artifactId>
-               </exclusion>
-               <exclusion>
-                   <groupId>com.alibaba</groupId>
-                   <artifactId>fastjson</artifactId>
-               </exclusion>
-           </exclusions>
         </dependency>
         <!--boot web actuator-->
         <dependency>

@@ -23,7 +23,7 @@ spring:
         login-password: idr123456
 ruomm:
   # 日志输出路径
-  logPath: "../app_logs/authentication-server/${spring.profiles.active}_logs"
+  logPath: "../app_logs/payment-client/${spring.profiles.active}_logs"
   #用户jwt有效时间（min）
   userTokenExpireMins: 720
   #用户jwt限制 0.不限制 1.单点登录 n.限制n点登录 -1.完全不校验
