@@ -3,9 +3,9 @@
  * 	@author wanruome
  * 	@create 2018年6月14日 下午4:53:25
  */
-package com.ruomm.springcloud.authserver.shiro.realm;
+package com.ruomm.springcloud.paymentclient.shiro.realm;
 
-import com.ruomm.springcloud.authserver.shiro.model.User;
+import com.ruomm.springcloud.paymentclient.shiro.model.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

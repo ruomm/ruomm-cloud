@@ -10,9 +10,8 @@
     </parent>-->
     <parent>
         <groupId>com.ruomm.springcloud</groupId>
-        <artifactId>pom-webapp</artifactId>
+        <artifactId>app</artifactId>
         <version>1.0.0</version>
-        <relativePath/>
     </parent>
     <groupId>com.ruomm.springcloud</groupId>
     <artifactId>authentication-server</artifactId>
